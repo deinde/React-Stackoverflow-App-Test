@@ -1,0 +1,19 @@
+.search-bar{
+	position:relative;
+  margin-bottom:10px;
+}
+input.form-control{
+	margin-bottom:0px;
+}
+.center{
+	position:relative;
+	text-align:center;
+	margin-top:-40px;
+	margin-bottom:50px;
+	font-size:.8em;
+	color:#999999;
+	
+}
+img{
+	max-width:725px;
+}
