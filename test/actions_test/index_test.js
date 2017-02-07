@@ -7,7 +7,7 @@ describe('actions',()=>{
 	
 	describe('searchPosts',()=>{
 	
-   it('it has the correct type',()=>{
+   it('has the correct type',()=>{
    	//first make a variable and call the action!!! saveComment()!!!!
 		const action = searchPosts();
 		//then access the type it returns then expect it to equal the

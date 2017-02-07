@@ -18,8 +18,7 @@ console.log(dateString)
 return dateString;
 
 }
-
-  renderList(){
+ renderList(){
     return this.props.posts.map((post)=>{
     
     const style={
@@ -41,10 +40,12 @@ return dateString;
         listStyle:'none'
       }
      return(
-      <div>
+      <div className='container '>
    	  { post.is_answered ?
-      <div><h2>Answered</h2>
-      
+    <div className='panel panel-default'>
+     <div className='panel-heading'>
+      <h2>Answered</h2>
+      </div>
        <li key={ post.title }>
          <Link to={'popup/'+post.question_id}>
            <img style={style} src={post.owner.profile_image}/> 
@@ -54,9 +55,7 @@ return dateString;
          <span style={margin} ><strong>View Count :</strong><span style={nudge}>{post.view_count}</span></span>
          <span style={margin}><strong>Asked on:</strong><span style={nudge}>{this.convertDate(post.creation_date)}</span></span>
          <div dangerouslySetInnerHTML={{ __html: post.body }}></div>
-        
-      <div>
-      
+     <div>
       {post.tags.length > 1 ?
       <span className=''>  <strong>Tags:</strong> 
         {
@@ -88,8 +87,11 @@ return dateString;
       </li> 
       </div>
       :
-      <div>
+       <div className='panel panel-default'>
+      <div className='panel-heading'>
+
       <h2>Not Answered</h2>
+      </div>
       <li key={ post.title }>
         <img  src={post.owner.profile_image}/> 
         <h3>{post.title}</h3>
@@ -109,8 +111,8 @@ return dateString;
         }
       </div>
      
-      </div>
-
+      </div>// end 
+      
     }
     </div>
    	)

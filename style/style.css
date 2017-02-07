@@ -17,3 +17,10 @@ input.form-control{
 img{
 	max-width:725px;
 }
+
+.panel-default {
+    border-color: #ddd;
+    padding: 12px;
+    margin-left: -12px;
+    margin-right: auto;
+}

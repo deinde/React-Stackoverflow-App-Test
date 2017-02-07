@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import SearchBar from '../containers/searchbar';
 
 export default class App extends Component {
-
-  render() {
+	render() {
     return (
       <div className='container'>
         {this.props.children}

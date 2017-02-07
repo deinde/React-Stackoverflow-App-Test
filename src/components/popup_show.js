@@ -7,8 +7,7 @@ import {Link} from 'react-router';
 class PostShow extends Component{
 
 componentWillMount(){	
-
-	this.props.showPost(this.props.params.id);
+  this.props.showPost(this.props.params.id);
 }
 	renderList(){
      const styleList={
@@ -18,12 +17,16 @@ componentWillMount(){
       	listStyle:'none'
       }
        const blox={
-        display:'block'
+        display:'block',
+        marginTop:10,
+        marginBottom:10,
+        marginLeft:0
       }
+     
     return this.props.posts.map((post)=>{
       return(
            <li key={post.title}  style={listStyle}>
-             <img  style={blox} src={post.owner.profile_image}/>
+             <img className='' style={blox} src={post.owner.profile_image}/>
 	           <span><strong>user :</strong><span style={styleList}>{post.owner.display_name}</span></span>
 	           <span style={styleList}><strong>reputation :</strong><span style={styleList}>{post.owner.reputation}</span></span>
 	           <div dangerouslySetInnerHTML={{ __html: post.body }}></div>
@@ -32,18 +35,24 @@ componentWillMount(){
          })
         }
 	render(){
-		const pull={
-			marginLeft:'65%'
+		const top={
+			marginTop:10
 		}
+     const pad={
+        paddingLeft:0
+      }
 		return(
-      <div>
-        <h1>Answer!!!</h1>
-        <Link to='/'>
-         <button style={pull} className='btn btn-success pull-left' type='button' >back to search</button>
-        </Link>
-        <ul>
-         {this.renderList()}
-        </ul>
+      
+       <div className='panel panel-default'>
+         <div className='panel-heading'>
+         <h1>Answer!!!</h1>
+         </div>
+          <Link to='/'>
+          <button style={top} className='btn btn-success pull-right' type='button' >back to search</button>
+          </Link>
+          <ul style={pad}>
+           {this.renderList()}
+          </ul>
       </div>
     );
 	}
@@ -53,6 +62,8 @@ componentWillMount(){
   }
 
 export default connect(mapStateToProps,{showPost})(PostShow);
+
+
 
 
 

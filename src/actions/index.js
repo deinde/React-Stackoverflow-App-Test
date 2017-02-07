@@ -1,12 +1,10 @@
 import axios from 'axios';
 
+const API_KEY ='&key=YfIHATcpDDCkHD8ACvxTgw(('
+const API_KEY_2= '/answers?site=stackoverflow&filter=withbody&key=YfIHATcpDDCkHD8ACvxTgw(( '	
 
-  const API_KEY ='&key=YfIHATcpDDCkHD8ACvxTgw(('
-  const API_KEY_2= '/answers?site=stackoverflow&filter=withbody&key=YfIHATcpDDCkHD8ACvxTgw(( '	
-
-
-  export const SEARCH_POSTS ='SEARCH_POSTS';
-  export const SHOW_POST = 'SHOW_POST';
+export const SEARCH_POSTS ='SEARCH_POSTS';
+export const SHOW_POST = 'SHOW_POST';
 
 export function searchPosts(intitle){
 	const ROOT_URL = 'http://api.stackexchange.com/2.2/search?order=desc&sort=activity&tagged=rest&intitle='+intitle+'&site=stackoverflow&filter=withbody'; 
