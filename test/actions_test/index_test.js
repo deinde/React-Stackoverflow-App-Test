@@ -15,11 +15,13 @@ describe('actions',()=>{
      expect(action.type).to.equal(SEARCH_POSTS);
    });
    
-   it('promised payload is returning', ()=>{
+   it('has the correct payload', ()=>{
    	const action = searchPosts('new comment');
     let myFunction= () => {
     setTimeout(() => { 
-    console.log('promise is returning search object',action.payload);
+    
+    console.log('this is the WHHHH action',action.payload);
+    
   }, 3000);
 }
     myFunction();
