@@ -22,6 +22,7 @@ componentWillMount(){
         marginBottom:10,
         marginLeft:0
       }
+
      
     return this.props.posts.map((post)=>{
       return(
@@ -36,19 +37,31 @@ componentWillMount(){
         }
 	render(){
 		const top={
-			marginTop:10
+		  marginTop:10
 		}
-     const pad={
-        paddingLeft:0
-      }
+    const pad={
+      paddingLeft:0
+    }
+    const backColor={
+      background:'#fff291'
+    }
+    const color={
+      color:'green',
+      marginLeft:5
+    }
+    const inline={
+      display:'inline-block',
+      color:'green'
+    }  
 		return(
       
        <div className='panel panel-default'>
-         <div className='panel-heading'>
-         <h1>Answer!!!</h1>
+        <div style={backColor} className='panel-heading'>
+          <h2 style={inline}>Answered</h2>
+          <span style={color} className="glyphicon glyphicon-ok" aria-hidden="true"></span>
          </div>
-          <Link to='/'>
-          <button style={top} className='btn btn-success pull-right' type='button' >back to search</button>
+         <Link to='/'>
+            <button style={top} className='btn btn-success pull-right' type='button' >back to search</button>
           </Link>
           <ul style={pad}>
            {this.renderList()}

@@ -39,16 +39,27 @@ return dateString;
        const listStyle={
         listStyle:'none'
       }
+      const backColor={
+         background:'#fff291'
+      }
+      const color={
+        color:'green',
+        marginLeft:5
+      }
+      const inline={
+        display:'inline-block',
+        color:'green'
+      }
      return(
       <div className='container '>
    	  { post.is_answered ?
     <div className='panel panel-default'>
-     <div className='panel-heading'>
-      <h2>Answered</h2>
+     <div style={backColor}  className='panel-heading'>
+      <h2 style={inline}>Answered</h2>
+      <span style={color} className="glyphicon glyphicon-ok" aria-hidden="true"></span>
       </div>
        <li key={ post.title }>
          <Link to={'popup/'+post.question_id}>
-           <img style={style} src={post.owner.profile_image}/> 
            <h3 dangerouslySetInnerHTML={{ __html: post.title }}></h3>
          </Link>  
          <span ><strong>Score:</strong><span style={nudge}>{post.score}</span></span>
@@ -93,7 +104,6 @@ return dateString;
       <h2>Not Answered</h2>
       </div>
       <li key={ post.title }>
-        <img  src={post.owner.profile_image}/> 
         <h3>{post.title}</h3>
         <span ><strong>Score:</strong><span style={nudge}>{post.score}</span></span>
         <span style={margin} ><strong>View Count :</strong><span style={nudge}>{post.view_count}</span></span>
