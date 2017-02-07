@@ -57,7 +57,7 @@ componentWillMount(){
       
        <div className='panel panel-default'>
         <div style={backColor} className='panel-heading'>
-          <h2 style={inline}>Answered</h2>
+          <h2 style={inline}>Answered!</h2>
           <span style={color} className="glyphicon glyphicon-ok" aria-hidden="true"></span>
          </div>
          <Link to='/'>
